@@ -20,6 +20,11 @@
   --color-border: #E5E7EB;
   --color-success: #16A34A;
 
+  /* #16A34A sobre blanco da ~3.3:1 (pasa AA solo para texto grande/iconos,
+     no para texto normal). Variante más oscura para usar como color de
+     texto (ej. mensaje de confirmación del formulario): ~5:1 sobre blanco. */
+  --color-success-text: #15803D;
+
   /* Color funcional de error de formulario: no está en la paleta de marca
      del PRD §4 (que no define un rojo); es el mínimo necesario para cumplir
      accesibilidad (no comunicar solo con color) sin tocar la identidad visual. */

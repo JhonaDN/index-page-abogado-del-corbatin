@@ -1,7 +1,9 @@
-# Delta: Landing Page (sitio estático)
+# Delta: Landing Page (Nuxt 4 / Vue 3)
 
 **Change ID:** `landing-page-abogado-corbatin`
-**Affects:** `index.html`, `css/variables.css`, `css/styles.css`, `js/main.js`, `legal/privacidad.html`
+**Affects:** `app/pages/index.vue`, `app/components/sections/*.vue`, `app/components/layout/*.vue`, `app/assets/css/variables.css`, `app/assets/css/styles.css`, `app/pages/legal/privacidad.vue`
+
+> Implementado en Nuxt 4 (Vue 3) en vez del sitio estático HTML/CSS/JS originalmente propuesto; los requisitos de negocio (ADDED) abajo no cambiaron con el pivote de stack.
 
 ---
 
@@ -9,10 +11,10 @@
 
 ### Requirement: Estructura de secciones del PRD §5
 
-La landing page DEBE presentar, en `index.html`, las siguientes 9 secciones en este orden exacto: Hero, Prueba social/credenciales, Áreas de práctica, El problema/cómo ayudas, Cómo funciona, Testimonios, Sección de confianza, CTA final + formulario, Footer.
+La landing page DEBE presentar, ensambladas en `app/pages/index.vue` a partir de los componentes de `app/components/sections/`, las siguientes 9 secciones en este orden exacto: Hero, Prueba social/credenciales, Áreas de práctica, El problema/cómo ayudas, Cómo funciona, Testimonios, Sección de confianza, CTA final + formulario, Footer.
 
 #### Scenario: Visitante recorre la página de arriba a abajo
-- GIVEN un visitante abre `index.html`
+- GIVEN un visitante abre la página principal (`/`)
 - WHEN hace scroll de principio a fin
 - THEN encuentra las 9 secciones en el orden definido por PRD §5, sin secciones adicionales intercaladas
 
@@ -30,7 +32,7 @@ El hero DEBE incluir un botón de llamada a la acción visible dentro del viewpo
 Los estilos DEBEN usar únicamente los colores HEX definidos en PRD §4 (`#1E3A5F`, `#16304D`, `#C9A227`, `#2A6F77`, `#F8F9FA`, `#FFFFFF`, `#1A1A1A`, `#6B7280`, `#E5E7EB`, `#16A34A`), expuestos como variables CSS, respetando la proporción aproximada 60% neutros / 30% navy / 10% dorado.
 
 #### Scenario: Inspección de la hoja de estilos
-- GIVEN un desarrollador revisa `css/variables.css` y `css/styles.css`
+- GIVEN un desarrollador revisa `app/assets/css/variables.css` y `app/assets/css/styles.css`
 - WHEN busca colores hardcodeados fuera de las variables definidas
 - THEN no encuentra ningún color que no pertenezca a la paleta de PRD §4
 
@@ -72,7 +74,7 @@ Todo dato real no definido en PRD §12 (ciudad exacta, años de experiencia, cre
 
 #### Scenario: Búsqueda de pendientes antes de publicar
 - GIVEN el sitio construido
-- WHEN se ejecuta `grep -rn "\[" index.html legal/privacidad.html`
+- WHEN se ejecuta `grep -rn "\[" app/`
 - THEN todos los resultados corresponden a placeholders de datos reales pendientes, no a texto final
 
 ---

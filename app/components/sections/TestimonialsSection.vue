@@ -19,7 +19,7 @@ const testimonials = [
 </script>
 
 <template>
-  <section id="testimonios" class="section section--navy">
+  <section id="testimonios" class="section section--light">
     <div class="container">
       <header class="section-header section-header--center">
         <p class="eyebrow">Casos de éxito</p>

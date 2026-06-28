@@ -364,18 +364,20 @@ summary:focus-visible {
 .hero {
   background: linear-gradient(155deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-text-on-primary);
-  padding-block: var(--space-5) var(--space-6);
+  /* Padding reducido en mobile a propósito: con el header sticky (64px) hay que
+     dejar el CTA principal visible sin scroll en viewports pequeños (375x667). */
+  padding-block: var(--space-4) var(--space-5);
 }
 
 .hero__inner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
 }
 
 .hero__title {
   color: var(--color-white);
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-xl);
 }
 
 .hero__title span {
@@ -393,7 +395,7 @@ summary:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin-block: var(--space-3);
+  margin-block: var(--space-2);
 }
 
 .hero__trust-note {
@@ -628,10 +630,11 @@ summary:focus-visible {
 }
 
 .testimonial-card {
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
 }
 
 .testimonial-card__stars {
@@ -652,21 +655,21 @@ summary:focus-visible {
   margin: 0 0 var(--space-2);
   font-family: var(--font-heading);
   font-style: italic;
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
 .testimonial-card footer {
   font-size: var(--fs-sm);
-  color: var(--color-text-on-primary-muted);
+  color: var(--color-text-secondary);
 }
 
 .testimonial-card footer strong {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .testimonials__disclaimer {
   font-size: var(--fs-xs);
-  color: var(--color-text-on-primary-muted);
+  color: var(--color-text-secondary);
   margin-top: var(--space-3);
 }
 
@@ -918,7 +921,7 @@ summary:focus-visible {
 }
 
 .contact-form__status.is-success {
-  color: var(--color-success);
+  color: var(--color-success-text);
 }
 
 .contact-form__status.is-error {
@@ -1050,9 +1053,14 @@ summary:focus-visible {
     font-size: var(--fs-sm);
   }
 
+  .hero {
+    padding-block: var(--space-6) var(--space-7);
+  }
+
   .hero__inner {
     flex-direction: row;
     align-items: center;
+    gap: var(--space-5);
   }
 
   .hero__content {
@@ -1065,6 +1073,10 @@ summary:focus-visible {
 
   .hero__title {
     font-size: var(--fs-3xl);
+  }
+
+  .hero__actions {
+    margin-block: var(--space-3);
   }
 
   .credentials__grid {

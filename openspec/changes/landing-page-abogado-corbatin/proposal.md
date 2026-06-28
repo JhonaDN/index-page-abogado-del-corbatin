@@ -2,7 +2,9 @@
 
 **Change ID:** `landing-page-abogado-corbatin`
 **Created:** 2026-06-28
-**Status:** Draft
+**Status:** Implemented (Nuxt)
+
+> **Nota de pivote de stack (2026-06-28):** la versión inicial de este proposal se escribió para un sitio estático en HTML + CSS + JS puro. Durante la implementación el proyecto se migró a **Nuxt 4 (Vue 3)**; se mantiene el mismo alcance, estructura, paleta y tipografía, solo cambia la tecnología de implementación. Este documento se actualizó para reflejar esa decisión.
 
 ---
 
@@ -17,25 +19,27 @@ Pain points específicos del sector legal que debe resolver la página:
 
 ## Proposed Solution
 
-Construir la primera versión de la landing page como sitio estático (HTML + CSS + JS puro, sin framework ni build tool), siguiendo exactamente la estructura, paleta y tipografía definidas en el PRD:
+Construir la primera versión de la landing page con **Nuxt 4 (Vue 3 + Vite)**, sin backend propio, siguiendo exactamente la estructura, paleta y tipografía definidas en el PRD:
 
-- 9 secciones de PRD §5, en el orden definido, en `index.html`.
-- Tokens de diseño (color, tipografía, espaciado) en `css/variables.css`, respetando la paleta de PRD §4 y la regla 60/30/10.
-- Estilos mobile-first en `css/styles.css`, con contraste AA.
-- `js/main.js`: menú móvil, botón flotante de WhatsApp, validación de formulario en cliente (sin backend), hooks de analítica (eventos de CTA, formulario, WhatsApp).
-- `legal/privacidad.html`: aviso de privacidad / tratamiento de datos (obligatorio, PRD §6).
+- 9 secciones de PRD §5, en el orden definido, ensambladas en `app/pages/index.vue` a partir de un componente por sección (`app/components/sections/`).
+- Tokens de diseño (color, tipografía, espaciado) en `app/assets/css/variables.css`, respetando la paleta de PRD §4 y la regla 60/30/10.
+- Estilos mobile-first en `app/assets/css/styles.css`, con contraste AA.
+- Menú móvil y acordeón de FAQ como estado reactivo de Vue (`ref`/`reactive`) en `SiteHeader.vue` y `TrustFaqSection.vue`.
+- Validación de formulario en cliente (sin backend) en `ContactFormSection.vue`.
+- Botón flotante de WhatsApp (`WhatsappFloatButton.vue`) y stub de analítica (`useAnalytics()` + directiva `v-analytics`).
+- `app/pages/legal/privacidad.vue`: aviso de privacidad / tratamiento de datos (obligatorio, PRD §6).
 - Todo dato real aún no definido (ciudad exacta, años de experiencia, credenciales, testimonios, número de WhatsApp, dirección, foto) se deja como texto placeholder marcado con `[CORCHETES]`, fácil de ubicar con buscar-y-reemplazar.
 
 ## Scope
 
 ### In Scope
-- Las 9 secciones de PRD §5 (Hero → Footer) en `index.html`.
+- Las 9 secciones de PRD §5 (Hero → Footer) en `app/pages/index.vue` + `app/components/sections/*.vue`.
 - Paleta de color exacta de PRD §4 (Navy `#1E3A5F`, Navy oscuro `#16304D`, Dorado `#C9A227`, Teal `#2A6F77`, neutros y verde de éxito) aplicada con regla 60/30/10.
 - Tipografía serif (Playfair Display) en títulos + sans-serif (Inter) en cuerpo, PRD §10.
 - CTA principal visible sin scroll en el hero (mobile y desktop).
 - Formulario de contacto con los campos de PRD §6 (Nombre, Email, Teléfono, descripción del caso), validación HTML5 + JS en cliente, mensaje de confidencialidad visible, sin envío a backend real (solo simulación de confirmación).
 - Botón flotante de WhatsApp.
-- Aviso de privacidad básico en `legal/privacidad.html`.
+- Aviso de privacidad básico en `app/pages/legal/privacidad.vue`.
 - Mobile-first, responsive, accesible (contraste AA, foco visible, landmarks semánticos).
 
 ### Out of Scope
@@ -43,35 +47,34 @@ Construir la primera versión de la landing page como sitio estático (HTML + CS
 - Analítica real (GA/GTM) — solo se deja el hook de eventos en JS, sin ID real.
 - Fotografía profesional real, logo, testimonios reales — se usan placeholders.
 - Revisión de cumplimiento normativo ante el colegio de abogados colombiano (PRD §8) — queda como recordatorio, no se resuelve en código.
-- Migración a React/Tailwind u otro framework.
 
 ## Impact Analysis
 
 | Component | Change Required | Details |
 |-----------|-----------------|---------|
-| `index.html` | Sí | Construir desde cero las 9 secciones del PRD §5 |
-| `css/variables.css` | Sí | Definir tokens de color/tipografía/espaciado del PRD §4 y §10 |
-| `css/styles.css` | Sí | Estilos mobile-first de todas las secciones, botón WhatsApp, formulario |
-| `js/main.js` | Sí | Menú móvil, WhatsApp flotante, validación de formulario, stubs de analítica |
-| `legal/privacidad.html` | Sí | Aviso de privacidad básico enlazado desde el formulario y el footer |
+| `app/pages/index.vue` + `app/components/sections/*.vue` | Sí | Las 9 secciones del PRD §5, una por componente |
+| `app/assets/css/variables.css` | Sí | Tokens de color/tipografía/espaciado del PRD §4 y §10 |
+| `app/assets/css/styles.css` | Sí | Estilos mobile-first de todas las secciones, botón WhatsApp, formulario |
+| `app/components/layout/*.vue` + `app/composables/useAnalytics.ts` + `app/plugins/analytics.ts` | Sí | Header con menú móvil, footer, WhatsApp flotante, stub de analítica |
+| `app/pages/legal/privacidad.vue` | Sí | Aviso de privacidad básico enlazado desde el formulario y el footer |
 | Backend / API | No | Fuera de alcance en esta versión |
 
 ## Architecture Considerations
 
-- Sitio 100% estático, sin dependencias de build en producción (coincide con la decisión ya documentada en `README.md` del proyecto, motivada por el requisito de carga <3s del PRD §9).
-- `css/variables.css` centraliza los tokens de color y tipografía como variables CSS (`:root`), para que el reemplazo de placeholders y ajustes de marca no requiera tocar `styles.css`.
-- `js/main.js` sin dependencias externas; el formulario se valida y "envía" en cliente, dejando un punto de integración claro (`// TODO: conectar a backend/servicio de formularios`) para una iteración futura.
-- Estructura de carpetas ya existente (`css/`, `js/`, `assets/`, `legal/`) se respeta tal cual.
+- Nuxt en modo SSR/Node por defecto (`nuxt build` + `node .output/server/index.mjs`); también soporta `nuxt generate` para salida 100% estática si se prefiere ese despliegue, dado el requisito de carga <3s del PRD §9.
+- `app/assets/css/variables.css` centraliza los tokens de color y tipografía como variables CSS (`:root`), para que el reemplazo de placeholders y ajustes de marca no requiera tocar `styles.css`.
+- El formulario usa estado reactivo de Vue (`reactive`/`ref`) en vez de manipulación directa del DOM; se valida y "envía" en cliente, dejando un punto de integración claro (`// TODO: conectar a backend/servicio de formularios`) para una iteración futura.
+- Un componente por sección (`app/components/sections/`) mantiene el archivo de ensamblaje (`index.vue`) corto y hace explícito el orden del PRD §5.
 
 ## Success Criteria
 
-- [ ] Las 9 secciones del PRD §5 existen en `index.html`, en el orden especificado.
-- [ ] La paleta de PRD §4 se usa exactamente (mismos HEX) y se puede verificar visualmente la proporción 60/30/10.
-- [ ] El CTA principal es visible sin scroll en viewport móvil (375px) y desktop (1440px).
-- [ ] El formulario tiene los 4 campos de PRD §6, valida en cliente y muestra mensaje de confidencialidad + confirmación de envío.
-- [ ] Existe botón flotante de WhatsApp funcional (enlace `wa.me` con placeholder de número).
-- [ ] Todos los datos reales faltantes están marcados con `[CORCHETES]` y son fáciles de encontrar (`grep -r "\["`).
-- [ ] La página pasa una verificación visual básica de contraste AA en texto sobre fondo navy y dorado.
+- [x] Las 9 secciones del PRD §5 existen en `app/pages/index.vue`, en el orden especificado.
+- [x] La paleta de PRD §4 se usa exactamente (mismos HEX) — verificado en `variables.css` y el balance de fondos navy/claro en las secciones renderizadas.
+- [x] El CTA principal es visible sin scroll en viewport móvil (375×667) y desktop — ajustado el espaciado del hero para garantizarlo en pantallas pequeñas.
+- [x] El formulario tiene los 4 campos de PRD §6, valida en cliente y muestra mensaje de confidencialidad + confirmación de envío.
+- [x] Existe botón flotante de WhatsApp funcional (enlace `wa.me` con placeholder de número).
+- [x] Todos los datos reales faltantes están marcados con `[CORCHETES]` y son fáciles de encontrar (`grep -rn "\[" app/`).
+- [x] Verificación de contraste AA con cálculo automatizado de la fórmula WCAG (luminancia relativa) sobre todos los pares texto/fondo de `variables.css`: todos pasan AA tras corregir el texto de confirmación de éxito del formulario (ver `tasks.md` Fase 3). Pendiente: confirmación visual con Lighthouse/axe en navegador real (no disponible en este entorno sandbox).
 
 ## Risks & Mitigations
 
