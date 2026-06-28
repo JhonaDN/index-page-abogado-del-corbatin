@@ -2,33 +2,39 @@
 
 Landing page de conversión para un despacho de **derecho penal** en Colombia, bajo la marca "El Abogado del Corbatín". Basado en el PRD compartido (v1.1).
 
-**Estado actual:** solo esqueleto del proyecto (carpetas + archivos vacíos). Aún no hay HTML/CSS/JS escrito — se espera confirmar el contenido pendiente (sección "Por definir" abajo) antes de empezar a programar.
+**Estado actual:** las 9 secciones del PRD §5 están implementadas en Nuxt (Vue 3), con validación de formulario en cliente, acordeón de FAQ y botón flotante de WhatsApp. Todo dato real aún no confirmado queda marcado con `[CORCHETES]` (ver `openspec/changes/landing-page-abogado-corbatin/`).
 
 ## Stack técnico
 
-HTML + CSS + JS plano, sin framework ni build tool (decisión tomada para maximizar velocidad de carga y mantener control total sobre el peso de la página — requisito clave del PRD: <3s de carga).
-
-`npm` se usa únicamente para correr un servidor local de desarrollo (`http-server`), no para build ni dependencias de producción.
+[Nuxt 4](https://nuxt.com) (Vue 3 + Vite). Sin backend: el formulario de contacto se valida en el cliente y simula un envío exitoso (`app/components/sections/ContactFormSection.vue`).
 
 ```bash
-npm install   # instala el servidor local (una sola vez)
-npm run dev   # abre la página en el navegador con recarga del servidor
+npm install     # instala dependencias
+npm run dev     # http://localhost:3000, con recarga en caliente
+npm run build   # build de producción
+npm run generate # build estático (SSG), si se decide no usar SSR/Node en producción
 ```
 
 ## Estructura de carpetas
 
 ```
-index.html              → página principal (pendiente de escribir)
-css/
-  variables.css          → tokens de diseño: color y tipografía (pendiente)
-  styles.css             → estilos del sitio (pendiente)
-js/
-  main.js                → menú móvil, botón WhatsApp, formulario, analítica (pendiente)
-assets/
-  img/                   → fotos, logo, imágenes de las secciones
-  icons/                 → iconos SVG (WhatsApp, confianza, balanza, etc.)
-legal/
-  privacidad.html        → aviso de privacidad / tratamiento de datos (obligatorio por PRD §6)
+app/
+  app.vue                  → raíz de la app, monta <NuxtPage />
+  pages/
+    index.vue              → ensambla las 9 secciones de la landing
+    legal/privacidad.vue   → aviso de privacidad / tratamiento de datos
+  components/
+    layout/                → SiteHeader, SiteFooter, WhatsappFloatButton, BrandLogo
+    sections/               → una sección del PRD §5 por componente
+  composables/
+    useAnalytics.ts        → stub de trackEvent() (PRD §9)
+  plugins/
+    analytics.client.ts    → directiva v-analytics, equivalente al listener de data-analytics
+  assets/css/
+    variables.css          → tokens de diseño: color y tipografía
+    styles.css             → estilos del sitio
+public/                    → favicon, robots.txt (assets estáticos servidos tal cual)
+assets/                    → carpeta heredada para imágenes/iconos aún sin usar (img/, icons/)
 ```
 
 ## Información ya definida (PRD §12)
@@ -47,9 +53,9 @@ legal/
 
 **"Agenda tu consulta confidencial"** — combina la acción (agendar) con el elemento de confianza más crítico en lo legal (confidencialidad), que es justo lo que el PRD pide reforzar en el CTA y en el formulario (§6, §7). Alternativas: "Habla con tu abogado ahora", "Solicita tu asesoría confidencial".
 
-## Pendiente por confirmar antes de escribir código
+## Pendiente por confirmar antes de publicar
 
-Estos datos son necesarios para no dejar placeholders genéricos en el sitio:
+Estos datos son necesarios para reemplazar los placeholders `[CORCHETES]` del sitio (`grep -rn "\[" app/`):
 
 - [ ] **Ciudad o ciudades específicas** dentro de Colombia para SEO local real (el PRD recomienda "abogado [especialidad] en [ciudad]"; "Colombia" solo es muy genérico para SEO local).
 - [ ] **Sub-especialidades dentro de penal** a destacar (ej: delitos contra el patrimonio, delitos económicos, audiencias y juicio oral, libertad provisional, recursos de apelación, etc.).
@@ -64,12 +70,10 @@ Estos datos son necesarios para no dejar placeholders genéricos en el sitio:
 - [ ] **Cuenta de analítica** (Google Analytics / GTM ID) para los eventos de conversión del PRD §9.
 - [ ] **Verificación de cumplimiento** de publicidad legal ante el colegio de abogados / normativa colombiana aplicable (PRD §8) — recordatorio, no se resuelve en el código.
 
-## Plan de trabajo (una vez confirmado lo anterior)
+## Plan de trabajo restante
 
-1. Definir tokens de diseño en `css/variables.css` (paleta y tipografía del PRD §4 y §10).
-2. Construir `index.html` con las 9 secciones del PRD §5 (Hero → Footer), semántico y accesible.
-3. Construir `css/styles.css` mobile-first, cumpliendo contraste AA.
-4. Construir `js/main.js`: menú móvil, botón flotante de WhatsApp, validación y envío del formulario, hooks de analítica.
-5. Completar `legal/privacidad.html` con el aviso de tratamiento de datos.
-6. Revisar contra los criterios de aceptación del PRD §11.
-7. Probar en navegador (mobile + desktop) y medir tiempo de carga.
+1. Reemplazar los placeholders `[CORCHETES]` con datos reales (ver lista arriba).
+2. Conectar el formulario a un servicio real de envío o backend propio.
+3. Conectar `useAnalytics()` a Google Analytics / GTM.
+4. Revisar contra los criterios de aceptación del PRD §11.
+5. Probar en navegador (mobile + desktop) y medir tiempo de carga.

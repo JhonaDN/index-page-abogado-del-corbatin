@@ -1,15 +1,17 @@
 {
-  "name": "index-page-abogado-del-corbatin",
-  "version": "1.0.0",
-  "description": "Landing page de conversión para un despacho de derecho penal en Colombia, bajo la marca \"El Abogado del Corbatín\".",
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "http-server -o -c-1"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "http-server": "^14.1.1"
+  "dependencies": {
+    "nuxt": "^4.4.8",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
   }
 }

@@ -3,3 +3,16 @@ Thumbs.db
 node_modules/
 .vscode/
 *.log
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Local env files
+.env
+.env.*
+!.env.example
