@@ -1,0 +1,15 @@
+{
+  "name": "index-page-abogado-del-corbatin",
+  "version": "1.0.0",
+  "description": "Landing page de conversión para un despacho de derecho penal en Colombia, bajo la marca \"El Abogado del Corbatín\".",
+  "scripts": {
+    "dev": "http-server -o -c-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
