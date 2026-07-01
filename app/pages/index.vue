@@ -6,8 +6,8 @@
 
     <main id="main-content">
       <HeroSection />
-      <CredentialsSection />
       <PracticeAreasSection />
+      <VideoSection />
       <EmpathySection />
       <ProcessSection />
       <TestimonialsSection />
@@ -21,10 +21,12 @@
 </template>
 
 <script setup lang="ts">
+import { useSeoMeta } from "nuxt/app";
+
 useSeoMeta({
-  title: 'Abogado Penalista en [CIUDAD], Colombia | El Abogado del Corbatín',
+  title: "Abogado Penalista en [CIUDAD], Colombia | El Abogado del Corbatín",
   description:
-    'Defensa penal experta en [CIUDAD], Colombia. Agenda una consulta confidencial con El Abogado del Corbatín y protege tus derechos desde el primer momento.',
-  robots: 'index, follow'
-})
+    "Defensa penal experta en [CIUDAD], Colombia. Agenda una consulta confidencial con El Abogado del Corbatín y protege tus derechos desde el primer momento.",
+  robots: "index, follow",
+});
 </script>

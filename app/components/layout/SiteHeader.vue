@@ -39,7 +39,7 @@ function closeNav() {
               class="btn btn--primary btn--sm"
               v-analytics="'cta_nav'"
               @click="closeNav"
-            >[Agendar consulta]</a>
+            >Agendar consulta</a>
           </li>
         </ul>
       </nav>

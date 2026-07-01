@@ -1,7 +1,7 @@
 <template>
   <a
     class="whatsapp-float"
-    href="https://wa.me/[NUMERO_WHATSAPP]?text=Hola%2C%20quiero%20agendar%20una%20consulta%20confidencial"
+    href="https://wa.me/3229730276?text=Hola%2C%20quiero%20agendar%20una%20consulta%20confidencial"
     target="_blank"
     rel="noopener"
     aria-label="Escribir por WhatsApp"
