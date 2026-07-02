@@ -1,7 +1,18 @@
 <script setup lang="ts">
+import { useHead, useRuntimeConfig, useSeoMeta } from 'nuxt/app'
+
+const { public: { siteOrigin } } = useRuntimeConfig()
+const canonicalUrl = `${siteOrigin}${useRuntimeConfig().app.baseURL}legal/privacidad`
+
 useSeoMeta({
   title: 'Política de privacidad | El Abogado del Corbatín',
+  description:
+    'Política de privacidad y tratamiento de datos personales de El Abogado del Corbatín, conforme a la normativa colombiana de protección de datos.',
   robots: 'noindex, follow'
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: canonicalUrl }]
 })
 
 const currentYear = new Date().getFullYear()

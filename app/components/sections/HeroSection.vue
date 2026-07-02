@@ -2,9 +2,8 @@
   <section id="hero" class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
-        <p class="eyebrow">Defensa penal · [CIUDAD], Colombia</p>
         <h1 class="hero__title">
-          Abogado penalista en [CIUDAD].
+          Abogado penalista
           <span>Defiendo tus derechos cuando más lo necesitas.</span>
         </h1>
         <p class="hero__subtitle">
@@ -13,8 +12,8 @@
         </p>
 
         <div class="hero__actions">
-          <a href="#contacto" class="btn btn--primary btn--lg" v-analytics="'cta_hero'">[Agendar consulta]</a>
-          <a href="tel:+57[NUMERO_TELEFONO]" class="btn btn--ghost btn--lg" v-analytics="'call_hero'">Llamar ahora</a>
+          <a href="#contacto" class="btn btn--primary btn--lg" v-analytics="'cta_hero'">Agendar consulta</a>
+          <a href="tel:+57 3229730276" class="btn btn--ghost btn--lg" v-analytics="'call_hero'">Llamar ahora</a>
         </div>
 
         <p class="hero__trust-note">
@@ -31,14 +30,12 @@
       </div>
 
       <div class="hero__media">
-        <!-- Placeholder de foto real: PRD §1 recomienda foto profesional real, no genérica -->
-        <div class="hero__photo-placeholder" role="img" aria-label="Foto profesional del abogado pendiente de reemplazo">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="8" r="4" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <span>[FOTO PROFESIONAL DEL ABOGADO]</span>
-        </div>
+        <img
+          src="~/assets/img/foto-practice-area.png"
+          alt="Abogado penalista, foto profesional de cuerpo completo"
+          class="hero__photo"
+          fetchpriority="high"
+        />
       </div>
     </div>
   </section>

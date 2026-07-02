@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear()
     <div class="container footer__grid">
       <div class="footer__brand">
         <BrandLogo />
-        <p>Defensor de tus derechos y experto en soluciones legales en [CIUDAD], Colombia.</p>
+        <p>Defensor de tus derechos y experto en soluciones legales en toda Colombia.</p>
       </div>
 
       <div class="footer__contact">
@@ -18,7 +18,7 @@ const currentYear = new Date().getFullYear()
               d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.54 2.37a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.71-1.11a2 2 0 0 1 2.11-.45c.77.24 1.56.42 2.37.54A2 2 0 0 1 22 16.92z"
             />
           </svg>
-          <a href="tel:+57[NUMERO_TELEFONO]">[+57 NÚMERO DE TELÉFONO]</a>
+          <a href="tel:+57 3229730276">+57 3229730276</a>
         </p>
         <p class="footer__contact-item">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
@@ -27,24 +27,10 @@ const currentYear = new Date().getFullYear()
           </svg>
           <a href="mailto:[correo@elabogadodelcorbatin.com]">[correo@elabogadodelcorbatin.com]</a>
         </p>
-        <p class="footer__contact-item">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-7.58 8-13a8 8 0 1 0-16 0c0 5.42 8 13 8 13z" />
-            <circle cx="12" cy="9" r="2.5" />
-          </svg>
-          <span>[Dirección del despacho], [CIUDAD], Colombia</span>
-        </p>
       </div>
 
       <div class="footer__legal">
         <h2>Información legal</h2>
-        <p class="footer__legal-item">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="14" rx="2" />
-            <circle cx="9" cy="12" r="2" />
-          </svg>
-          <span>Tarjeta profesional T.P. [N.º tarjeta profesional]</span>
-        </p>
         <p class="footer__legal-item">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16v12H8l-4 4V4z" />

@@ -280,9 +280,8 @@ summary:focus-visible {
 }
 
 .logo__icon {
-  width: 2rem;
-  height: 2rem;
-  color: var(--color-accent);
+  width: auto;
+  height: 1.25rem;
 }
 
 .logo strong {
@@ -417,35 +416,19 @@ summary:focus-visible {
 .hero__media {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 
-.hero__photo-placeholder {
+/* Foto de cuerpo completo sin recuadro: se muestra expuesta sobre el
+   fondo del hero. El translateY compensa el padding-bottom de .hero para
+   que el borde inferior de la foto quede al ras del borde de la sección. */
+.hero__photo {
   width: 100%;
-  max-width: 360px;
-  aspect-ratio: 4 / 5;
-  border: 2px dashed rgba(255, 255, 255, 0.4);
-  border-radius: var(--radius-lg);
-  background-color: rgba(255, 255, 255, 0.06);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  text-align: center;
-  padding: var(--space-3);
-}
-
-.hero__photo-placeholder .icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.hero__photo-placeholder span {
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 20ch;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  transform: translateY(var(--space-5));
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.25));
 }
 
 /* ---------- Prueba social / credenciales ---------- */
@@ -1123,6 +1106,11 @@ summary:focus-visible {
 
   .hero__media {
     flex: 1;
+  }
+
+  .hero__photo {
+    max-width: 460px;
+    transform: translateY(var(--space-7));
   }
 
   .hero__title {

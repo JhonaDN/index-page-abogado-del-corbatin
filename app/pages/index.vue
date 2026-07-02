@@ -10,7 +10,6 @@
       <VideoSection />
       <EmpathySection />
       <ProcessSection />
-      <TestimonialsSection />
       <TrustFaqSection />
       <ContactFormSection />
     </main>
@@ -21,12 +20,55 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta } from "nuxt/app";
+import { useHead, useRuntimeConfig, useSeoMeta } from "nuxt/app";
+import heroPhoto from "~/assets/img/foto-practice-area.png";
+
+const {
+  public: { siteOrigin },
+} = useRuntimeConfig();
+const canonicalUrl = `${siteOrigin}${useRuntimeConfig().app.baseURL}`;
+const ogImageUrl = `${siteOrigin}${heroPhoto}`;
+
+const title = "Abogado Penalista en Colombia | El Abogado del Corbatín";
+const description =
+  "Defensa penal experta, Agenda una consulta confidencial con El Abogado del Corbatín y protege tus derechos desde el primer momento.";
 
 useSeoMeta({
-  title: "Abogado Penalista en [CIUDAD], Colombia | El Abogado del Corbatín",
-  description:
-    "Defensa penal experta en [CIUDAD], Colombia. Agenda una consulta confidencial con El Abogado del Corbatín y protege tus derechos desde el primer momento.",
+  title,
+  description,
   robots: "index, follow",
+  ogType: "website",
+  ogSiteName: "El Abogado del Corbatín",
+  ogTitle: title,
+  ogDescription: description,
+  ogUrl: canonicalUrl,
+  ogImage: ogImageUrl,
+  ogImageAlt: "Abogado penalista, foto profesional de cuerpo completo",
+  ogLocale: "es_CO",
+  twitterCard: "summary_large_image",
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImageUrl,
+});
+
+useHead({
+  link: [{ rel: "canonical", href: canonicalUrl }],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Attorney",
+        name: "El Abogado del Corbatín",
+        description,
+        url: canonicalUrl,
+        image: ogImageUrl,
+        telephone: "+573229730276",
+        areaServed: "Colombia",
+        knowsLanguage: "es",
+        sameAs: ["https://www.tiktok.com/@elabogadodelcorba"],
+      }),
+    },
+  ],
 });
 </script>
