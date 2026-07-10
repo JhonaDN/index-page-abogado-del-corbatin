@@ -26,7 +26,25 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap'
         }
       ],
-      meta: [{ name: 'theme-color', content: '#1E3A5F' }]
+      meta: [
+        { name: 'theme-color', content: '#1E3A5F' },
+        {
+          'http-equiv': 'Content-Security-Policy',
+          content: [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' https://www.tiktok.com https://*.tiktokcdn.com https://*.ttwstatic.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+            "font-src 'self' https://fonts.gstatic.com",
+            "img-src 'self' data: https:",
+            "frame-src https://www.tiktok.com",
+            "connect-src 'self' https://www.tiktok.com",
+            "object-src 'none'",
+            "base-uri 'self'",
+            "form-action 'self'",
+            "frame-ancestors 'none'"
+          ].join('; ')
+        }
+      ]
     }
   }
 })
