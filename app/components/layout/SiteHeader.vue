@@ -28,7 +28,12 @@ function closeNav() {
         <span class="nav-toggle__bar" />
       </button>
 
-      <nav id="primaryNav" class="nav" :class="{ 'is-open': isNavOpen }" aria-label="Navegación principal">
+      <nav
+        id="primaryNav"
+        class="nav"
+        :class="{ 'is-open': isNavOpen }"
+        aria-label="Navegación principal"
+      >
         <ul class="nav__list">
           <li><a href="#areas-practica" @click="closeNav">Áreas de práctica</a></li>
           <li><a href="#como-funciona" @click="closeNav">Cómo funciona</a></li>
@@ -39,7 +44,8 @@ function closeNav() {
               class="btn btn--primary btn--sm"
               v-analytics="'cta_nav'"
               @click="closeNav"
-            >Agendar consulta</a>
+              >Agendar consulta</a
+            >
           </li>
         </ul>
       </nav>

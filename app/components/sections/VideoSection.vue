@@ -3,7 +3,6 @@
     <div class="container">
       <div class="learning">
         <header class="section-header section-header--center">
-          <p class="eyebrow">Aprendamos juntos</p>
           <h2>Educación legal en video</h2>
           <p class="section-header__desc">
             Videos cortos donde explicamos tus derechos y el proceso penal en lenguaje sencillo.
@@ -16,11 +15,18 @@
             class="learning__nav learning__nav--prev"
             aria-label="Ver video anterior"
             @click="scrollCarousel(-1)"
-          >‹</button>
+          >
+            ‹
+          </button>
 
           <ul ref="carouselEl" class="learning__grid">
             <li v-for="video in tiktokVideos" :key="video.id" class="learning__item">
-              <blockquote class="tiktok-embed" :cite="video.url" :data-video-id="video.id" style="width: 100%">
+              <blockquote
+                class="tiktok-embed"
+                :cite="video.url"
+                :data-video-id="video.id"
+                style="width: 100%"
+              >
                 <section />
               </blockquote>
             </li>
@@ -31,7 +37,9 @@
             class="learning__nav learning__nav--next"
             aria-label="Ver video siguiente"
             @click="scrollCarousel(1)"
-          >›</button>
+          >
+            ›
+          </button>
         </div>
 
         <a
@@ -40,7 +48,8 @@
           target="_blank"
           rel="noopener noreferrer"
           v-analytics="'cta_tiktok'"
-        >Ver más en TikTok</a>
+          >Ver más en TikTok</a
+        >
       </div>
     </div>
   </section>
@@ -67,16 +76,16 @@ function scrollCarousel(direction: -1 | 1) {
 // un objeto { id: '<data-video-id de la URL>', url: '<link completo>' } a este arreglo.
 const tiktokVideos = [
   {
-    id: '7652131683679882504',
-    url: 'https://www.tiktok.com/@elabogadodelcorba/video/7652131683679882504'
-  },
-  {
     id: '7623795159762849045',
     url: 'https://www.tiktok.com/@elabogadodelcorba/video/7623795159762849045'
   },
   {
     id: '7624941348860333333',
     url: 'https://www.tiktok.com/@elabogadodelcorba/video/7624941348860333333'
+  },
+  {
+    id: '7652131683679882504',
+    url: 'https://www.tiktok.com/@elabogadodelcorba/video/7652131683679882504'
   },
   {
     id: '7637611392815598869',

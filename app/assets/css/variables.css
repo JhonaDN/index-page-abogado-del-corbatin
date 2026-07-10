@@ -6,63 +6,63 @@
 
 :root {
   /* --- Color de marca (PRD §4) --- */
-  --color-primary: #1E3A5F;          /* Navy — encabezados, barra superior, secciones clave */
-  --color-primary-dark: #16304D;     /* Navy oscuro — hover de botones/elementos primarios */
-  --color-accent: #C9A227;           /* Dorado — único acento de acción (CTA) */
-  --color-accent-dark: #A6841E;      /* Dorado oscuro — hover del CTA */
-  --color-accent-secondary: #2A6F77; /* Teal — iconos, indicadores de confianza */
+  --color-primary: #1e3a5f; /* Navy — encabezados, barra superior, secciones clave */
+  --color-primary-dark: #16304d; /* Navy oscuro — hover de botones/elementos primarios */
+  --color-accent: #c9a227; /* Dorado — único acento de acción (CTA) */
+  --color-accent-dark: #a6841e; /* Dorado oscuro — hover del CTA */
+  --color-accent-secondary: #2a6f77; /* Teal — iconos, indicadores de confianza */
 
   /* --- Neutros y soporte (PRD §4) --- */
-  --color-bg-light: #F8F9FA;
-  --color-white: #FFFFFF;
-  --color-text-primary: #1A1A1A;
-  --color-text-secondary: #6B7280;
-  --color-border: #E5E7EB;
-  --color-success: #16A34A;
+  --color-bg-light: #f8f9fa;
+  --color-white: #ffffff;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-success: #16a34a;
 
   /* #16A34A sobre blanco da ~3.3:1 (pasa AA solo para texto grande/iconos,
      no para texto normal). Variante más oscura para usar como color de
      texto (ej. mensaje de confirmación del formulario): ~5:1 sobre blanco. */
-  --color-success-text: #15803D;
+  --color-success-text: #15803d;
 
   /* Color funcional de error de formulario: no está en la paleta de marca
      del PRD §4 (que no define un rojo); es el mínimo necesario para cumplir
      accesibilidad (no comunicar solo con color) sin tocar la identidad visual. */
-  --color-error: #B42318;
+  --color-error: #b42318;
 
   /* Texto sobre fondos oscuros (navy) */
-  --color-text-on-primary: #FFFFFF;
-  --color-text-on-primary-muted: #C7D2E0;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-primary-muted: #c7d2e0;
 
   /* Texto sobre el acento dorado: el dorado es claro, así que un texto oscuro
      da el contraste más alto (~7:1) frente a blanco (~2.4:1, no pasa AA). */
-  --color-text-on-accent: #1A1A1A;
+  --color-text-on-accent: #1a1a1a;
 
   /* --- Tipografía (PRD §10) --- */
   --font-heading: 'Playfair Display', 'Lora', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Escala tipográfica (base 16px, mobile-first) */
-  --fs-xs: 0.8125rem;   /* 13px */
-  --fs-sm: 0.9375rem;   /* 15px */
-  --fs-base: 1rem;      /* 16px */
-  --fs-md: 1.125rem;    /* 18px */
-  --fs-lg: 1.375rem;    /* 22px */
-  --fs-xl: 1.75rem;     /* 28px */
-  --fs-2xl: 2.125rem;   /* 34px */
-  --fs-3xl: 2.5rem;     /* 40px */
+  --fs-xs: 0.8125rem; /* 13px */
+  --fs-sm: 0.9375rem; /* 15px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.125rem; /* 18px */
+  --fs-lg: 1.375rem; /* 22px */
+  --fs-xl: 1.75rem; /* 28px */
+  --fs-2xl: 2.125rem; /* 34px */
+  --fs-3xl: 2.5rem; /* 40px */
 
   --line-height-tight: 1.2;
   --line-height-base: 1.6;
 
   /* Espaciado, escala base 8px */
-  --space-1: 0.5rem;   /* 8px */
-  --space-2: 1rem;     /* 16px */
-  --space-3: 1.5rem;   /* 24px */
-  --space-4: 2rem;     /* 32px */
-  --space-5: 3rem;     /* 48px */
-  --space-6: 4rem;     /* 64px */
-  --space-7: 5.5rem;   /* 88px */
+  --space-1: 0.5rem; /* 8px */
+  --space-2: 1rem; /* 16px */
+  --space-3: 1.5rem; /* 24px */
+  --space-4: 2rem; /* 32px */
+  --space-5: 3rem; /* 48px */
+  --space-6: 4rem; /* 64px */
+  --space-7: 5.5rem; /* 88px */
 
   /* Layout */
   --container-max: 1200px;

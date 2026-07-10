@@ -14,6 +14,6 @@
 <script setup lang="ts">
 const credentials = [
   { number: '+[X]', label: 'años de experiencia' },
-  { number: '+[X]', label: 'casos atendidos' },
+  { number: '+[X]', label: 'casos atendidos' }
 ]
 </script>

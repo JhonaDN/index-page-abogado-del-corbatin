@@ -36,7 +36,7 @@ export default defineNuxtConfig({
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src 'self' https://fonts.gstatic.com",
             "img-src 'self' data: https:",
-            "frame-src https://www.tiktok.com",
+            'frame-src https://www.tiktok.com',
             "connect-src 'self' https://www.tiktok.com",
             "object-src 'none'",
             "base-uri 'self'",

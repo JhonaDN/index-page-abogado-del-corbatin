@@ -13,6 +13,7 @@
 - [x] 1.3 Definir variables de espaciado, radios y sombras base
 
 **Quality Gate:**
+
 - [x] Los HEX de `variables.css` coinciden exactamente con los de PRD §4
 
 ---
@@ -33,6 +34,7 @@
 - [x] 2.12 Botón flotante de WhatsApp (`WhatsappFloatButton.vue`)
 
 **Quality Gate:**
+
 - [x] Orden de secciones coincide 1:1 con PRD §5 (verificado por posición de los `id` en el HTML renderizado)
 - [x] HTML semántico (header/main/section/footer, encabezados jerárquicos, landmarks, atributos alt/aria)
 
@@ -48,6 +50,7 @@
 - [x] 3.6 Verificación de proporción 60/30/10 de la paleta: 4 zonas navy (header, hero, CTA final, footer) vs. 5 zonas neutras/claras (credenciales, áreas, empatía, proceso, testimonios, confianza) — testimonios se cambió de navy a fondo claro durante la revisión para no sobrecargar el azul
 
 **Quality Gate:**
+
 - [x] Sin scroll horizontal (layout mobile-first con `container` de ancho fluido)
 - [x] CTA principal visible sin scroll vertical en 375×667 — se redujo el padding e interlineado del hero en mobile específicamente para esto; pendiente de confirmar con una herramienta de captura/viewport real (no disponible en este entorno: instalar un navegador headless requeriría una descarga de red no solicitada)
 - [x] Contraste AA verificado con script de fórmula WCAG 2.x (luminancia relativa) sobre todos los pares texto/fondo: navy/blanco, dorado/texto oscuro, fondo claro/texto oscuro, texto secundario, error, éxito. Único fallo encontrado: `--color-success` (#16A34A) sobre blanco como texto normal (~3.3:1, solo pasa para texto grande/iconos) — corregido agregando `--color-success-text: #15803D` (~5:1) para el mensaje de confirmación del formulario; el verde original se mantiene para el ícono decorativo (contraste no-textual ≥3:1)
@@ -64,6 +67,7 @@
 - [x] 4.6 Smooth scroll a los anclajes de CTA (`scroll-behavior: smooth`, respeta `prefers-reduced-motion`)
 
 **Quality Gate:**
+
 - [x] Formulario no se puede "enviar" con campos vacíos o email/teléfono inválido
 - [x] Build de producción (`npm run build`) sin errores; servidor verificado con `curl` (200 OK en `/` y `/legal/privacidad`)
 
@@ -77,6 +81,7 @@
 - [ ] 5.4 Repasar checklist de aceptación del PRD §11 con el abogado (cliente final) antes de publicar
 
 **Quality Gate:**
+
 - [x] `grep -rn "\[" app/` lista únicamente placeholders intencionales
 - [ ] Todos los ítems de PRD §11 confirmados por el cliente final (algunos dependen de datos reales que aún no existen)
 

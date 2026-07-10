@@ -3,17 +3,22 @@
     <div class="container hero__inner">
       <div class="hero__content">
         <h1 class="hero__title">
-          Abogado penalista
+          Tu abogado de confianza
           <span>Defiendo tus derechos cuando más lo necesitas.</span>
         </h1>
         <p class="hero__subtitle">
-          Defensor de tus derechos y experto en soluciones legales. Si enfrentas una investigación o un proceso
-          penal, te acompaño con claridad, discreción y una estrategia construida específicamente para tu caso.
+          Defensor de tus derechos y experto en soluciones legales. Si enfrentas una investigación o
+          un proceso penal, te acompaño con claridad, discreción y una estrategia construida
+          específicamente para tu caso.
         </p>
 
         <div class="hero__actions">
-          <a href="#contacto" class="btn btn--primary btn--lg" v-analytics="'cta_hero'">Agendar consulta</a>
-          <a href="tel:+57 3229730276" class="btn btn--ghost btn--lg" v-analytics="'call_hero'">Llamar ahora</a>
+          <a href="#contacto" class="btn btn--primary btn--lg" v-analytics="'cta_hero'"
+            >Agendar consulta</a
+          >
+          <a href="tel:+57 3229730276" class="btn btn--ghost btn--lg" v-analytics="'call_hero'"
+            >Llamar ahora</a
+          >
         </div>
 
         <p class="hero__trust-note">
@@ -25,14 +30,15 @@
             />
             <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          Consulta confidencial: tu información está protegida por el secreto profesional del abogado.
+          Consulta confidencial: tu información está protegida por el secreto profesional del
+          abogado.
         </p>
       </div>
 
       <div class="hero__media">
         <img
           src="~/assets/img/foto-practice-area.png"
-          alt="Abogado penalista, foto profesional de cuerpo completo"
+          alt="Abogado, foto profesional de cuerpo completo"
           class="hero__photo"
           fetchpriority="high"
         />

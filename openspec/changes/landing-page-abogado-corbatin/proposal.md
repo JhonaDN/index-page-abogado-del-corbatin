@@ -13,6 +13,7 @@
 "El Abogado del Corbatín" (despacho de derecho penal en Colombia) no tiene presencia web. Sin una landing page, los visitantes con un problema legal urgente no tienen forma de evaluar credibilidad, entender la especialidad del despacho ni solicitar una consulta. El PRD (`PRD.md`) define el objetivo: convertir visitantes con un problema legal en **solicitudes de consulta calificadas**, transmitiendo autoridad, confianza y discreción.
 
 Pain points específicos del sector legal que debe resolver la página:
+
 - El visitante llega con dudas ("¿me entiende?", "¿es confiable?", "¿cuánto cuesta?", "¿mis datos están seguros?").
 - Sin prueba social ni credenciales visibles, no hay razón para confiar.
 - Sin un CTA claro y visible, el visitante se va sin contactar.
@@ -33,6 +34,7 @@ Construir la primera versión de la landing page con **Nuxt 4 (Vue 3 + Vite)**, 
 ## Scope
 
 ### In Scope
+
 - Las 9 secciones de PRD §5 (Hero → Footer) en `app/pages/index.vue` + `app/components/sections/*.vue`.
 - Paleta de color exacta de PRD §4 (Navy `#1E3A5F`, Navy oscuro `#16304D`, Dorado `#C9A227`, Teal `#2A6F77`, neutros y verde de éxito) aplicada con regla 60/30/10.
 - Tipografía serif (Playfair Display) en títulos + sans-serif (Inter) en cuerpo, PRD §10.
@@ -43,6 +45,7 @@ Construir la primera versión de la landing page con **Nuxt 4 (Vue 3 + Vite)**, 
 - Mobile-first, responsive, accesible (contraste AA, foco visible, landmarks semánticos).
 
 ### Out of Scope
+
 - Backend real / integración con servicio de envío de formularios (Formspree, EmailJS, etc.) — se deja como TODO marcado.
 - Analítica real (GA/GTM) — solo se deja el hook de eventos en JS, sin ID real.
 - Fotografía profesional real, logo, testimonios reales — se usan placeholders.
@@ -50,14 +53,14 @@ Construir la primera versión de la landing page con **Nuxt 4 (Vue 3 + Vite)**, 
 
 ## Impact Analysis
 
-| Component | Change Required | Details |
-|-----------|-----------------|---------|
-| `app/pages/index.vue` + `app/components/sections/*.vue` | Sí | Las 9 secciones del PRD §5, una por componente |
-| `app/assets/css/variables.css` | Sí | Tokens de color/tipografía/espaciado del PRD §4 y §10 |
-| `app/assets/css/styles.css` | Sí | Estilos mobile-first de todas las secciones, botón WhatsApp, formulario |
-| `app/components/layout/*.vue` + `app/composables/useAnalytics.ts` + `app/plugins/analytics.ts` | Sí | Header con menú móvil, footer, WhatsApp flotante, stub de analítica |
-| `app/pages/legal/privacidad.vue` | Sí | Aviso de privacidad básico enlazado desde el formulario y el footer |
-| Backend / API | No | Fuera de alcance en esta versión |
+| Component                                                                                      | Change Required | Details                                                                 |
+| ---------------------------------------------------------------------------------------------- | --------------- | ----------------------------------------------------------------------- |
+| `app/pages/index.vue` + `app/components/sections/*.vue`                                        | Sí              | Las 9 secciones del PRD §5, una por componente                          |
+| `app/assets/css/variables.css`                                                                 | Sí              | Tokens de color/tipografía/espaciado del PRD §4 y §10                   |
+| `app/assets/css/styles.css`                                                                    | Sí              | Estilos mobile-first de todas las secciones, botón WhatsApp, formulario |
+| `app/components/layout/*.vue` + `app/composables/useAnalytics.ts` + `app/plugins/analytics.ts` | Sí              | Header con menú móvil, footer, WhatsApp flotante, stub de analítica     |
+| `app/pages/legal/privacidad.vue`                                                               | Sí              | Aviso de privacidad básico enlazado desde el formulario y el footer     |
+| Backend / API                                                                                  | No              | Fuera de alcance en esta versión                                        |
 
 ## Architecture Considerations
 
@@ -78,8 +81,8 @@ Construir la primera versión de la landing page con **Nuxt 4 (Vue 3 + Vite)**, 
 
 ## Risks & Mitigations
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Placeholders `[CORCHETES]` quedan publicados sin reemplazar | Med | Alto (incumplimiento PRD §8, datos falsos) | Centralizar placeholders, listarlos en README y en `tasks.md`; usar formato consistente y grep-eable |
-| El dorado de acento (`#C9A227`) sobre fondos claros no cumple contraste AA en texto pequeño | Med | Medio (accesibilidad) | Usar el dorado solo en botones con texto oscuro/negro y tamaño suficiente, nunca como color de texto sobre blanco |
-| Sin backend, el usuario puede creer que su consulta fue enviada cuando no lo fue | Bajo | Alto (expectativa rota con un cliente con problema legal urgente) | Mensaje de confirmación explícito sobre que es una demo y comentario `TODO` claro en el JS para la próxima iteración |
+| Risk                                                                                        | Probability | Impact                                                            | Mitigation                                                                                                           |
+| ------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Placeholders `[CORCHETES]` quedan publicados sin reemplazar                                 | Med         | Alto (incumplimiento PRD §8, datos falsos)                        | Centralizar placeholders, listarlos en README y en `tasks.md`; usar formato consistente y grep-eable                 |
+| El dorado de acento (`#C9A227`) sobre fondos claros no cumple contraste AA en texto pequeño | Med         | Medio (accesibilidad)                                             | Usar el dorado solo en botones con texto oscuro/negro y tamaño suficiente, nunca como color de texto sobre blanco    |
+| Sin backend, el usuario puede creer que su consulta fue enviada cuando no lo fue            | Bajo        | Alto (expectativa rota con un cliente con problema legal urgente) | Mensaje de confirmación explícito sobre que es una demo y comentario `TODO` claro en el JS para la próxima iteración |

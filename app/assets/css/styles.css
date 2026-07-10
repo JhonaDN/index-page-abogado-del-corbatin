@@ -37,16 +37,25 @@ img {
   display: block;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   line-height: var(--line-height-tight);
   margin: 0 0 var(--space-2);
   color: var(--color-primary);
 }
 
-h1 { font-size: var(--fs-2xl); }
-h2 { font-size: var(--fs-xl); }
-h3 { font-size: var(--fs-lg); }
+h1 {
+  font-size: var(--fs-2xl);
+}
+h2 {
+  font-size: var(--fs-xl);
+}
+h3 {
+  font-size: var(--fs-lg);
+}
 
 p {
   margin: 0 0 var(--space-2);
@@ -58,7 +67,8 @@ a {
   text-decoration-color: var(--color-accent);
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -195,7 +205,10 @@ summary:focus-visible {
   border: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
   touch-action: manipulation;
 }
 
@@ -307,18 +320,20 @@ summary:focus-visible {
   height: 2px;
   background-color: var(--color-white);
   border-radius: 2px;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+.nav-toggle[aria-expanded='true'] .nav-toggle__bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+.nav-toggle[aria-expanded='true'] .nav-toggle__bar:nth-child(2) {
   opacity: 0;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+.nav-toggle[aria-expanded='true'] .nav-toggle__bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
@@ -330,7 +345,10 @@ summary:focus-visible {
   transform: translateY(-12px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base),
+    visibility var(--transition-base);
   overflow-y: auto;
 }
 
@@ -431,6 +449,14 @@ summary:focus-visible {
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.25));
 }
 
+/* Solo en celular: la foto se reduce un poco para dejar más aire al texto. */
+@media (max-width: 767px) {
+  .hero__photo {
+    max-width: 300px;
+    margin-inline: auto;
+  }
+}
+
 /* ---------- Prueba social / credenciales ---------- */
 .credentials {
   padding-block: var(--space-5);
@@ -508,7 +534,9 @@ summary:focus-visible {
   line-height: 1;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .learning__nav:hover,
@@ -747,6 +775,41 @@ summary:focus-visible {
   margin: 0;
 }
 
+/* Pestañas de categoría del FAQ */
+.faq-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.faq-tabs__button {
+  border: 1px solid var(--color-border);
+  background: none;
+  border-radius: var(--radius-pill, 999px);
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.faq-tabs__button:hover {
+  border-color: var(--color-accent-secondary);
+  color: var(--color-primary);
+}
+
+.faq-tabs__button.is-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
 /* Acordeón de preguntas frecuentes */
 .accordion {
   border-top: 1px solid var(--color-border);
@@ -781,7 +844,7 @@ summary:focus-visible {
   flex-shrink: 0;
 }
 
-.accordion-trigger[aria-expanded="true"] .icon {
+.accordion-trigger[aria-expanded='true'] .icon {
   transform: rotate(180deg);
 }
 
@@ -804,6 +867,23 @@ summary:focus-visible {
   color: var(--color-text-secondary);
   font-size: var(--fs-sm);
   padding-bottom: var(--space-2);
+}
+
+/* CTA de ayuda al final del FAQ */
+.faq-help {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: flex-start;
+}
+
+.faq-help__text {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  margin: 0;
 }
 
 /* ---------- CTA final + formulario ---------- */
@@ -844,6 +924,14 @@ summary:focus-visible {
 
 .contact-form__title {
   font-size: var(--fs-lg);
+}
+
+.section--navy .contact-form__title {
+  color: var(--color-text-primary);
+}
+
+.text-black {
+  color: var(--color-text-primary);
 }
 
 .form-field {
@@ -1062,8 +1150,12 @@ summary:focus-visible {
    Tablet — 768px+
    ========================================================================== */
 @media (min-width: 768px) {
-  h1 { font-size: var(--fs-3xl); }
-  h2 { font-size: var(--fs-2xl); }
+  h1 {
+    font-size: var(--fs-3xl);
+  }
+  h2 {
+    font-size: var(--fs-2xl);
+  }
 
   .nav-toggle {
     display: none;
@@ -1152,10 +1244,6 @@ summary:focus-visible {
 
   .testimonials__grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .trust__grid {
-    grid-template-columns: 1fr 1fr;
   }
 
   .cta-form__inner {

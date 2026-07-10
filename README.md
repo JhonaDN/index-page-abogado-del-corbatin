@@ -39,15 +39,15 @@ assets/                    → carpeta heredada para imágenes/iconos aún sin u
 
 ## Información ya definida (PRD §12)
 
-| Campo | Valor |
-|---|---|
-| Nombre / marca | El Abogado del Corbatín |
-| Área de práctica | Derecho Penal |
-| Cobertura | Colombia |
-| Propuesta de valor | "Defensor de tus Derechos y experto en soluciones legales" |
-| Años de experiencia / credenciales | Por definir |
-| Testimonios | Por definir |
-| Texto del CTA | Por definir — propuesta abajo |
+| Campo                              | Valor                                                      |
+| ---------------------------------- | ---------------------------------------------------------- |
+| Nombre / marca                     | El Abogado del Corbatín                                    |
+| Área de práctica                   | Derecho Penal                                              |
+| Cobertura                          | Colombia                                                   |
+| Propuesta de valor                 | "Defensor de tus Derechos y experto en soluciones legales" |
+| Años de experiencia / credenciales | Por definir                                                |
+| Testimonios                        | Por definir                                                |
+| Texto del CTA                      | Por definir — propuesta abajo                              |
 
 ### Propuesta de CTA (sujeta a cambios)
 

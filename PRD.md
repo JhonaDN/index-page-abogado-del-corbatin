@@ -9,7 +9,7 @@
 
 **Objetivo principal:** Convertir visitantes con un problema legal en **solicitudes de consulta calificadas**, transmitiendo autoridad, confianza y discreción.
 
-En servicios legales, el visitante suele llegar con un problema sensible y con dudas: *"¿este abogado entiende mi caso?", "¿es confiable?", "¿cuánto me va a costar?", "¿mi información está segura?"*. La landing debe responder esas dudas y guiar hacia **una sola acción**: agendar una consulta.
+En servicios legales, el visitante suele llegar con un problema sensible y con dudas: _"¿este abogado entiende mi caso?", "¿es confiable?", "¿cuánto me va a costar?", "¿mi información está segura?"_. La landing debe responder esas dudas y guiar hacia **una sola acción**: agendar una consulta.
 
 **Acción de conversión (CTA principal):** [Elegir una] Agendar consulta / Solicitar asesoría / Reservar primera cita / Contactar al abogado.
 
@@ -21,12 +21,12 @@ En servicios legales, el visitante suele llegar con un problema sensible y con d
 
 ## 2. Audiencia objetivo
 
-| Aspecto | Definición |
-|---|---|
-| ¿Quién es? | [Ej: personas o empresas con un problema en tu área — laboral, civil, penal, familia, comercial] |
-| Situación | Tiene un conflicto o necesidad legal, a menudo con urgencia o estrés |
-| Qué busca | Claridad, alguien que lo escuche, experiencia comprobable y discreción |
-| Objeciones principales | "¿Tiene experiencia en *mi* tipo de caso?" · "¿Cuánto cuesta?" · "¿Puedo confiar en él/ella?" |
+| Aspecto                | Definición                                                                                       |
+| ---------------------- | ------------------------------------------------------------------------------------------------ |
+| ¿Quién es?             | [Ej: personas o empresas con un problema en tu área — laboral, civil, penal, familia, comercial] |
+| Situación              | Tiene un conflicto o necesidad legal, a menudo con urgencia o estrés                             |
+| Qué busca              | Claridad, alguien que lo escuche, experiencia comprobable y discreción                           |
+| Objeciones principales | "¿Tiene experiencia en _mi_ tipo de caso?" · "¿Cuánto cuesta?" · "¿Puedo confiar en él/ella?"    |
 
 > **Especialízate en el mensaje.** Una landing que dice "abogado de derecho laboral en [ciudad]" convierte mucho más que una que dice "servicios jurídicos integrales". Define tu área principal.
 
@@ -48,25 +48,25 @@ El azul transmite confianza y solidez; es la base clásica del sector legal. Se 
 
 ### Colores principales
 
-| Rol | Color | HEX | Uso |
-|---|---|---|---|
-| **Primario (azul jurídico)** | Navy | `#1E3A5F` | Encabezados, barra superior, secciones clave |
-| **Primario oscuro (hover)** | Navy oscuro | `#16304D` | Estado hover de botones primarios |
-| **Acento / CTA** | Dorado sobrio | `#C9A227` | Botones de acción, detalles de prestigio |
-| **Acento secundario** | Teal | `#2A6F77` | Iconos, indicadores de confianza |
+| Rol                          | Color         | HEX       | Uso                                          |
+| ---------------------------- | ------------- | --------- | -------------------------------------------- |
+| **Primario (azul jurídico)** | Navy          | `#1E3A5F` | Encabezados, barra superior, secciones clave |
+| **Primario oscuro (hover)**  | Navy oscuro   | `#16304D` | Estado hover de botones primarios            |
+| **Acento / CTA**             | Dorado sobrio | `#C9A227` | Botones de acción, detalles de prestigio     |
+| **Acento secundario**        | Teal          | `#2A6F77` | Iconos, indicadores de confianza             |
 
 > El **dorado/ámbar** aporta prestigio y se asocia bien al sector legal. Si prefieres algo más neutro, un **borgoña/granate** (`#7B2D3B`) también funciona muy bien como acento serio y autoritario.
 
 ### Neutros y soporte
 
-| Rol | Color | HEX | Uso |
-|---|---|---|---|
-| Fondo claro | Casi blanco | `#F8F9FA` | Fondo general |
-| Blanco puro | White | `#FFFFFF` | Tarjetas, formularios |
-| Texto principal | Casi negro | `#1A1A1A` | Cuerpo y títulos |
-| Texto secundario | Gris | `#6B7280` | Subtítulos, descripciones |
-| Bordes / divisores | Gris claro | `#E5E7EB` | Separadores, contornos |
-| Éxito / validación | Verde | `#16A34A` | Confirmaciones, checks |
+| Rol                | Color       | HEX       | Uso                       |
+| ------------------ | ----------- | --------- | ------------------------- |
+| Fondo claro        | Casi blanco | `#F8F9FA` | Fondo general             |
+| Blanco puro        | White       | `#FFFFFF` | Tarjetas, formularios     |
+| Texto principal    | Casi negro  | `#1A1A1A` | Cuerpo y títulos          |
+| Texto secundario   | Gris        | `#6B7280` | Subtítulos, descripciones |
+| Bordes / divisores | Gris claro  | `#E5E7EB` | Separadores, contornos    |
+| Éxito / validación | Verde       | `#16A34A` | Confirmaciones, checks    |
 
 ### Regla de uso (60–30–10)
 
@@ -156,10 +156,10 @@ La publicidad de servicios jurídicos está regulada por las normas deontológic
 
 ## 10. Tipografía sugerida
 
-| Uso | Fuente sugerida | Alternativa |
-|---|---|---|
-| Títulos | Merriweather / Playfair Display (con serifa = autoridad clásica) | Lora |
-| Cuerpo | Inter / Open Sans (sans-serif legible) | Source Sans |
+| Uso     | Fuente sugerida                                                  | Alternativa |
+| ------- | ---------------------------------------------------------------- | ----------- |
+| Títulos | Merriweather / Playfair Display (con serifa = autoridad clásica) | Lora        |
+| Cuerpo  | Inter / Open Sans (sans-serif legible)                           | Source Sans |
 
 > Una serifa elegante en los títulos refuerza la imagen de tradición y solidez típica del sector legal, combinada con una sans-serif limpia en el cuerpo.
 
@@ -183,7 +183,7 @@ La publicidad de servicios jurídicos está regulada por las normas deontológic
 - Nombre del abogado / despacho: El Abogado del Corbatin (Es como su nickname)
 - Área(s) de práctica principal(es): Penal
 - Ciudad / cobertura: Colombia
-- Años de experiencia y credenciales: Por definir 
-- Propuesta de valor en una frase:  Defensor de tus Derechos y experto en soluciones legales
+- Años de experiencia y credenciales: Por definir
+- Propuesta de valor en una frase: Defensor de tus Derechos y experto en soluciones legales
 - Testimonios o reseñas disponibles : Por definir
 - Texto exacto del CTA: Suguiereme una pero esta sugeta a cambios
