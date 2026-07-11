@@ -66,7 +66,10 @@ useHead({
         telephone: '+573229730276',
         areaServed: 'Colombia',
         knowsLanguage: 'es',
-        sameAs: ['https://www.tiktok.com/@elabogadodelcorba']
+        sameAs: [
+          'https://www.tiktok.com/@elabogadodelcorba',
+          'https://www.instagram.com/elabogadodelcorbatinn/'
+        ]
       })
     }
   ]
