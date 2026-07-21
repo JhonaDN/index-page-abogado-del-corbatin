@@ -13,11 +13,21 @@
     "prettier:check": "prettier --check ."
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "nuxt": "^4.4.8",
     "vue": "^3.5.38",
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
     "prettier": "^3.9.5"
+  },
+  "overrides": {
+    "@vercel/analytics": {
+      "vue-router": "$vue-router"
+    }
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "@parcel/watcher@2.5.6": true
   }
 }
