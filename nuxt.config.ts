@@ -3,6 +3,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  modules: ['@vercel/analytics/nuxt'],
+
   css: ['~/assets/css/variables.css', '~/assets/css/styles.css'],
 
   components: [{ path: '~/components', pathPrefix: false }],
