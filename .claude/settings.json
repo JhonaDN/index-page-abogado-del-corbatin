@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rlIn --include=\"*.css\" --include=\"*.scss\" -e \"--color-primary\" -e \":root\" /home/jdnd9/index-page-abogado-del-corbatin)",
+      "Bash(ls -la \"/mnt/c/Users/jdnd2/Documents/abogado_del_corbatin/\" 2>&1 | head -50)",
+      "Read(//mnt/c/Users/jdnd2/Documents/abogado_del_corbatin/**)",
+      "Bash(ls -la \"/mnt/c/Users/jdnd2/Documents/abogado_del_corbatin/Rediseño de hero section legal/\" 2>&1)",
+      "Read(//mnt/c/Users/jdnd2/Documents/abogado_del_corbatin/Rediseño de hero section legal/**)",
+      "Bash(npx nuxt *)",
+      "Bash(npx prettier *)",
+      "Bash(timeout 20 npm ping)",
+      "Bash(timeout 90 npx --yes sharp-cli --version)",
+      "Read(//home/jdnd9/.cache/ms-playwright/**)",
+      "Bash(npx --yes playwright --version)"
+    ]
+  }
+}

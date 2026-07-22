@@ -12,6 +12,13 @@
   --color-accent-dark: #a6841e; /* Dorado oscuro — hover del CTA */
   --color-accent-secondary: #2a6f77; /* Teal — iconos, indicadores de confianza */
 
+  /* Dorado/navy propios del Hero (mockup "Hero Abogado v2"), más cálido y
+     oscuro que el acento de marca de arriba. Se dejan en :root porque el
+     botón "Agendar consulta" del header reutiliza este mismo estilo. */
+  --hero-navy: #0e1c31;
+  --hero-gold: #d9b662;
+  --hero-gold-light: #e8cc8a;
+
   /* --- Neutros y soporte (PRD §4) --- */
   --color-bg-light: #f8f9fa;
   --color-white: #ffffff;

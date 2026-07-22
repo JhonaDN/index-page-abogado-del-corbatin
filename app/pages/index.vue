@@ -8,7 +8,7 @@
       <HeroSection />
       <PracticeAreasSection />
       <VideoSection />
-      <EmpathySection />
+      <ClientsSection />
       <ProcessSection />
       <ContactFormSection />
       <TrustFaqSection />
@@ -21,13 +21,13 @@
 
 <script setup lang="ts">
 import { useHead, useRuntimeConfig, useSeoMeta } from 'nuxt/app'
-import heroPhoto from '~/assets/img/foto-practice-area.png'
 
 const {
   public: { siteOrigin }
 } = useRuntimeConfig()
-const canonicalUrl = `${siteOrigin}${useRuntimeConfig().app.baseURL}`
-const ogImageUrl = `${siteOrigin}${heroPhoto}`
+const baseURL = useRuntimeConfig().app.baseURL
+const canonicalUrl = `${siteOrigin}${baseURL}`
+const ogImageUrl = `${siteOrigin}${baseURL}og-image.jpg`
 
 const title = 'Abogado en Colombia | El Abogado del Corbatín'
 const description =
@@ -43,7 +43,10 @@ useSeoMeta({
   ogDescription: description,
   ogUrl: canonicalUrl,
   ogImage: ogImageUrl,
-  ogImageAlt: 'Abogado, foto profesional de cuerpo completo',
+  ogImageAlt: 'El Abogado del Corbatín — defensa penal y derecho de familia en Colombia',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageType: 'image/jpeg',
   ogLocale: 'es_CO',
   twitterCard: 'summary_large_image',
   twitterTitle: title,

@@ -41,7 +41,7 @@ function closeNav() {
           <li>
             <a
               href="#contacto"
-              class="btn btn--primary btn--sm"
+              class="hero__cta hero__cta--nav"
               v-analytics="'cta_nav'"
               @click="closeNav"
               >Agendar consulta</a
