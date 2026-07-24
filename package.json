@@ -20,7 +20,7 @@
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
-    "prettier": "^3.9.5"
+    "prettier": "^3.9.6"
   },
   "overrides": {
     "@vercel/analytics": {
