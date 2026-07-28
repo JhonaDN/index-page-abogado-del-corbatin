@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://jhonadn.github.io/index-page-abogado-del-corbatin/sitemap.xml
+Sitemap: https://elabogadodelcorbatin.com/sitemap.xml

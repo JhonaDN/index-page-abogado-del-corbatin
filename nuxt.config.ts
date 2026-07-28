@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     public: {
       // Origen del sitio (sin path). El path base ("/index-page-abogado-del-corbatin/")
       // ya se maneja aparte vía NUXT_APP_BASE_URL en el workflow de despliegue.
-      siteOrigin: 'https://jhonadn.github.io'
+      siteOrigin: 'https://elabogadodelcorbatin.com'
     }
   },
 
